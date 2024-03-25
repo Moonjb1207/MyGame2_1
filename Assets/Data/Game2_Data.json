@@ -1,0 +1,66 @@
+{
+  "stageStat": [
+    {
+      "stage": "0",
+      "respawnCount": "10",
+      "maxCount": "5",
+      "curCount": "0",
+      "respawnDelay": "2",
+      "curDelay": "0",
+      "wave": "2"
+    },
+    {
+      "stage": "1",
+      "respawnCount": "30",
+      "maxCount": "10",
+      "curCount": "0",
+      "respawnDelay": "2",
+      "curDelay": "0",
+      "wave": "3"
+    },
+    {
+      "stage": "2",
+      "respawnCount": "40",
+      "maxCount": "15",
+      "curCount": "0",
+      "respawnDelay": "1",
+      "curDelay": "0",
+      "wave": "5"
+    },
+    {
+      "stage": "99",
+      "respawnCount": "20",
+      "maxCount": "10",
+      "curCount": "0",
+      "respawnDelay": "1",
+      "curDelay": "0",
+      "wave": "1"
+    }
+  ],
+  "enemyStat": [
+    {
+      "enemyName": null,
+      "hp": "10",
+      "moveSpeed": "3",
+      "damage": "2",
+      "attackRange": "2",
+      "atkSpeed": "1"
+    },
+    {
+      "enemyName": "R_Enemy",
+      "hp": "10",
+      "moveSpeed": "2",
+      "damage": "1",
+      "attackRange": "10",
+      "atkSpeed": "2"
+    },
+    {
+      "enemyName": "B_Enemy",
+      "hp": "10",
+      "moveSpeed": "5",
+      "damage": "5",
+      "attackRange": "2",
+      "atkSpeed": "0"
+    }
+  ]
+}
