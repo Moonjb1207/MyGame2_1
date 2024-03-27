@@ -21,10 +21,13 @@ public class InGameManager : MonoBehaviour
     public BuildingManager buildManagner;
     public Button buildButton;
 
-    public int stage;
     public int wave;
 
     public int score;
+
+    public int respawnCount;
+    public int maxCount;
+    public int respawnDelay;
 
     private void Awake()
     {
@@ -36,6 +39,10 @@ public class InGameManager : MonoBehaviour
         score = 0;
         spawnerCount = 0;
         wave = 0;
+
+        respawnCount = 20;
+        maxCount = 10;
+        respawnDelay = 1;
 
         buildingState = GetComponent<IGMBuildingState>();
         defenseState = GetComponent<IGMDefenseState>();
@@ -75,5 +82,11 @@ public class InGameManager : MonoBehaviour
         score += s;
 
         IGUIManager.Instance.score.text = score.ToString();
+    }
+    
+    public void AddWave()
+    {
+        respawnCount = respawnCount + respawnCount * wave;
+        maxCount = maxCount + maxCount * wave / 10;
     }
 }

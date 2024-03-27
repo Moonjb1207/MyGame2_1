@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+
 [Serializable]
 public class LvExp
-{ 
-    public int needExp;
+{
+    public string myName;
+    public Sprite myImg;
 
-    public LvExp(int ne)
+    public LvExp(string n, Sprite ne)
     {
-        needExp = ne;
+        myImg = ne;
+        myName = n;
     }
 }
 

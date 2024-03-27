@@ -8,8 +8,9 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance => instance;
 
     //public Dictionary<string, ItemType> myItems = new Dictionary<string, ItemType>();
-    public Dictionary<ItemType, List<string>> myItemDic = new Dictionary<ItemType, List<string>>();
+    //public Dictionary<ItemType, List<string>> myItemDic = new Dictionary<ItemType, List<string>>();
     public Dictionary<string, int> mybuildingDic = new Dictionary<string, int>();
+    public Dictionary<string, int> myWeaponDic = new Dictionary<string, int>();
 
     public string myWeapon;
     public string myBuilding;
@@ -21,18 +22,17 @@ public class InventoryManager : MonoBehaviour
             instance = this;
         }
 
-        myItemDic.Add(ItemType.weapon, new List<string>());
-
-        myWeapon = "machete";
+        myWeapon = "Colt";
         myBuilding = "Box";
 
-        myItemDic[ItemType.weapon].Add(myWeapon);
-
-        mybuildingDic.Add("Box", 1);
+        AddWeapons(myWeapon);
+        AddBuildings(myBuilding);
     }
 
     private void Start()
     {
+        LevelUpCardData.Instance.removeCard(myWeapon, cardType.Weapon);
+        LevelUpCardData.Instance.removeCard(myBuilding, cardType.Building);
     }
 
     //public void EquipWeapon_I(string weaponName)
@@ -49,14 +49,29 @@ public class InventoryManager : MonoBehaviour
     //    myHelmet = helmetName;
     //}
 
-    public void Equip(ItemType type, string equipName)
+    public void EquipWeapon(string wName)
     {
-        switch (type)
+        myWeapon = wName;
+    }
+
+    public void AddWeapons(string wName)
+    {
+        if (myWeaponDic.ContainsKey(wName))
         {
-            case ItemType.weapon:
-                myWeapon = equipName;
-                break;
+            return;
         }
+
+        myWeaponDic.Add(wName, 1);
+    }
+
+    public void LevelUpWeapons(string wName)
+    {
+        if (!myWeaponDic.ContainsKey(wName))
+        {
+            return;
+        }
+
+        myWeaponDic[wName]++;
     }
 
     public void EquipBuilding(string buildingName)
@@ -64,31 +79,32 @@ public class InventoryManager : MonoBehaviour
         myBuilding = buildingName;
     }
 
-    public void AddItems(string itemName, ItemType itemType)
-    {
-        if (myItemDic[itemType].Contains(itemName))
-        {
-            return;
-        }
-
-        myItemDic[itemType].Add(itemName);
-    }
-
     public void AddBuildings(string buildingName)
     {
-        if (mybuildingDic[buildingName] > 0)
+        if (mybuildingDic.ContainsKey(buildingName))
         {
             return;
         }
 
-        mybuildingDic[buildingName] = 1;
+        mybuildingDic.Add(buildingName, 1);
     }
 
-    public List<string> ShowEquipments(ItemType itemType)
+    public void LevelUpBuildings(string buildingName)
     {
-        if (!myItemDic.ContainsKey(itemType)) return null;
+        if (!mybuildingDic.ContainsKey(buildingName))
+        {
+            return;
+        }
 
-        return myItemDic[itemType];
+        mybuildingDic[buildingName]++;
+    }
+
+    public bool CheckBuildings(string buildingName)
+    {
+        if (mybuildingDic.ContainsKey(buildingName))
+            return true;
+        else
+            return false;
     }
 
     public List<string> ShowBuildings()

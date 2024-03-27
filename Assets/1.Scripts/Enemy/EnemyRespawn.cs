@@ -59,11 +59,15 @@ public class EnemyRespawn : MonoBehaviour
         }
     }
 
-    public void WaveStart(int wave)
+    public void WaveStart(int rc, int mc, int rd)
     {
         //respawnCount = myStageStat.respawnCount;
         //maxCount = myStageStat.maxCount;
         //respawnDelay = myStageStat.respawnDelay;
+
+        respawnCount = rc;
+        maxCount = mc;
+        respawnDelay = rd;
 
         curCount = 0;
         curDelay = 0;

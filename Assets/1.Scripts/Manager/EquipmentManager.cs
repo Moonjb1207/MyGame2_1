@@ -9,6 +9,7 @@ public class EquipmentManager : MonoBehaviour
 
     public WeaponData weaponData;
     public BuildingData buildingData;
+    public LvExpData statupData;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class EquipmentManager : MonoBehaviour
 
     Dictionary<string, WeaponStat> weaponStatDic = new Dictionary<string, WeaponStat>();
     Dictionary<string, BuildingStat> buildingStatDic = new Dictionary<string, BuildingStat>();
+    Dictionary<string, LvExp> CharStatDic = new Dictionary<string, LvExp>();
 
     void InitData()
     {
@@ -33,6 +35,11 @@ public class EquipmentManager : MonoBehaviour
         for (int i = 0; i < buildingData.buildingStats.Length; i++)
         {
             buildingStatDic.Add(buildingData.buildingStats[i].buildingName, buildingData.buildingStats[i]);
+        }
+
+        for (int i = 0; i < statupData.LvExpDatas.Length; i++)
+        {
+            CharStatDic.Add(statupData.LvExpDatas[i].myName, statupData.LvExpDatas[i]);
         }
     }
     public WeaponStat GetWeaponStat(string ename)
@@ -47,5 +54,12 @@ public class EquipmentManager : MonoBehaviour
         if (!buildingStatDic.ContainsKey(ename)) return null;
 
         return buildingStatDic[ename];
+    }
+
+    public LvExp GetStatUpStat(string ename)
+    {
+        if (!CharStatDic.ContainsKey(ename)) return null;
+
+        return CharStatDic[ename];
     }
 }

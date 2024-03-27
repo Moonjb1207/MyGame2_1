@@ -8,13 +8,12 @@ public class IGUIManager : MonoBehaviour
     private static IGUIManager instance;
     public static IGUIManager Instance => instance;
 
-    public GameObject InvenUI;
     public GameObject BInvenUI;
-    public GameObject ClearUI;
     public GameObject PauseUI;
     public GameObject GameoverUI;
     public GameObject SettingUI;
     public GameObject HelpUI;
+    public GameObject LevelUpUI;
 
     public TMPro.TMP_Text coin;
     public TMPro.TMP_Text myExp;
@@ -37,7 +36,7 @@ public class IGUIManager : MonoBehaviour
     {
         coin.text = Player.Instance.myGold.ToString();
         myExp.text = Player.Instance.myExp.ToString();
-        needExp.text = Player.Instance.lvexpData.LvExpDatas[Player.Instance.myLevel].needExp.ToString();
+        needExp.text = Player.Instance.myExpNeed.ToString();
 
         InGameManager.Instance.AddScore(0);
 
@@ -51,18 +50,6 @@ public class IGUIManager : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void OpenInven()
-    {
-        InvenUI.SetActive(true);
-        Time.timeScale = 0.0f;
-    }
-
-    public void CloseInven()
-    {
-        InvenUI.SetActive(false);
-        Time.timeScale = 1.0f;
     }
 
     public void OpenPause()

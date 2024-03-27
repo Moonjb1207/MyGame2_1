@@ -10,7 +10,7 @@ public class IGMDefenseState : IGMState
 
         for (int i = 0; i < manager.mySpawner.Length; i++)
         {
-            manager.mySpawner[i].WaveStart(manager.stage);
+            manager.mySpawner[i].WaveStart(manager.respawnCount, manager.maxCount, manager.respawnDelay);
             manager.spawnerCount++;
         }
 
@@ -29,6 +29,7 @@ public class IGMDefenseState : IGMState
         if (manager.spawnerCount == 0)
         {
             manager.wave++;
+            manager.AddWave();
 
             manager.NextState(manager.finishState);
         }

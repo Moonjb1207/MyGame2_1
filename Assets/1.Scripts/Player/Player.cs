@@ -24,6 +24,7 @@ public class Player : MonoBehaviour, IBattle
 
     public int myLevel;
     public int myExp;
+    public int myExpNeed;
 
     public LvExpData lvexpData;
 
@@ -66,6 +67,7 @@ public class Player : MonoBehaviour, IBattle
         moveSpeed = 7;
         myLevel = 1;
         myExp = 0;
+        myExpNeed = 10;
 
         bodyTr = transform.Find("P_Jungle_Charc");
 
@@ -365,27 +367,19 @@ public class Player : MonoBehaviour, IBattle
     {
         myExp += exp;
 
-        if (myLevel >= lvexpData.LvExpDatas.Length - 1)
+        if (myExp >= myExpNeed)
         {
-            return;
-        }
-
-        if (myExp >= lvexpData.LvExpDatas[myLevel].needExp)
-        {
-            if (myLevel == lvexpData.LvExpDatas.Length - 1)
-            {
-                return;
-            }
-
-            int remain = myExp - lvexpData.LvExpDatas[myLevel].needExp;
+            int remain = myExp - myExpNeed;
             myExp = 0;
-            myExp += remain;
-
+            
             LevelUp();
+
+            myExp += remain;
+            myExpNeed = myExpNeed + myExpNeed * myLevel;
         }
 
         IGUIManager.Instance.myExp.text = myExp.ToString();
-        IGUIManager.Instance.needExp.text = lvexpData.LvExpDatas[myLevel].needExp.ToString();
+        IGUIManager.Instance.needExp.text = myExpNeed.ToString();
     }
 
     public void AddGold(int gold)
@@ -412,9 +406,7 @@ public class Player : MonoBehaviour, IBattle
     {
         myLevel++;
 
-        InventoryManager.Instance.AddItems(EquipmentManager.Instance.weaponData.weaponStats[myLevel - 1].weaponName, ItemType.weapon);
-
-        EquipItem(ItemType.weapon, EquipmentManager.Instance.weaponData.weaponStats[myLevel - 1].weaponName);
+        myExpNeed = myExpNeed + Mathf.RoundToInt(myExpNeed * 0.5f);
 
         GameObject temp = Instantiate(levelupEffect);
         temp.transform.position = transform.position;
