@@ -16,5 +16,10 @@ public abstract class Weapon : Items
         myType = ItemType.weapon;
     }
 
-    public abstract void Attack();
+    public virtual void UpgradeWeapon(float val1, float val2 = 0, float val3 = 0)
+    {
+        stat.Damage += val1;
+    }
+
+    public abstract void Attack(float atkpoint);
 }

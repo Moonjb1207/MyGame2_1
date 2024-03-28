@@ -31,7 +31,6 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        LevelUpCardData.Instance.removeCard(myWeapon, cardType.Weapon);
         LevelUpCardData.Instance.removeCard(myBuilding, cardType.Building);
     }
 

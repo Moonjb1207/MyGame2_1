@@ -13,6 +13,10 @@ public class Player : MonoBehaviour, IBattle
     public Rigidbody rg;
     public float curHP;
     public float maxHP;
+    public float PlayerAttackPoint;
+
+    public float maxMoveSpeed;
+    public float maxAtkPoint;
 
     public Transform bodyTr;
     public LayerMask myEnemy;
@@ -20,13 +24,9 @@ public class Player : MonoBehaviour, IBattle
     [SerializeField] Weapon[] weapons;
     public Weapon curWeapon;
 
-    public float meleeDamage;
-
     public int myLevel;
     public int myExp;
     public int myExpNeed;
-
-    public LvExpData lvexpData;
 
     public Joystick moveJoystick;
     public Joystick rotJoystick;
@@ -63,11 +63,18 @@ public class Player : MonoBehaviour, IBattle
         instance = this;
 
         rg = GetComponent<Rigidbody>();
+
         curHP = maxHP = 100;
         moveSpeed = 7;
+        PlayerAttackPoint = 0;
+
+        maxMoveSpeed = 10;
+        maxAtkPoint = 10;
+
         myLevel = 1;
         myExp = 0;
         myExpNeed = 10;
+        myGold = 10;
 
         bodyTr = transform.Find("P_Jungle_Charc");
 
@@ -188,7 +195,7 @@ public class Player : MonoBehaviour, IBattle
 
     public void MoveTo(Vector3 dir)
     {
-        rg.velocity = dir * moveSpeed;
+        rg.velocity = dir * Mathf.Clamp(moveSpeed, 0, maxMoveSpeed);
     }
 
     public void RotTo(Vector3 dir)
@@ -282,20 +289,8 @@ public class Player : MonoBehaviour, IBattle
     {
         if (myAnim.GetBool("IsAttacking") || curWeapon.IsAttacking) return;
 
-        if (curWeapon.stat.meleeDamage > 0)
-        {
-            myAnim.SetTrigger("MK_Attacking");
-        }
-        else
-        {
-            curWeapon.Attack();
-            myAnim.SetTrigger("R_Attacking");
-        }
-    }
-
-    public void MeleeAttack()
-    {
-        curWeapon.Attack();
+        curWeapon.Attack(Mathf.Clamp(PlayerAttackPoint, 0, maxAtkPoint));
+        myAnim.SetTrigger("R_Attacking");
     }
 
     //IEnumerator Attacking()
@@ -332,7 +327,6 @@ public class Player : MonoBehaviour, IBattle
                         curWeapon = weapons[i];
                         curWeapon.gameObject.SetActive(true);
                         InventoryManager.Instance.myWeapon = equipName;
-                        meleeDamage = curWeapon.stat.meleeDamage;
                         break;
                     }
                 }
@@ -413,5 +407,26 @@ public class Player : MonoBehaviour, IBattle
 
         curHP = maxHP;
         hpBar.fillAmount = curHP / maxHP;
+
+        IGUIManager.Instance.OpenLevelUp();
+    }
+
+    public void UpgradeStat(string stat, cardType mytype)
+    {
+        LevelUpCard cardStat = LevelUpCardData.Instance.GetCardStat(stat, mytype);
+
+        if (stat == "Hp")
+        {
+            curHP += cardStat.value1;
+            maxHP += cardStat.value1;
+        }
+        else if (stat == "Atk")
+        {
+            PlayerAttackPoint += cardStat.value1;
+        }
+        else if (stat == "Move")
+        {
+            moveSpeed += cardStat.value1;
+        }
     }
 }

@@ -19,7 +19,7 @@ public class IGUIManager : MonoBehaviour
     public TMPro.TMP_Text myExp;
     public TMPro.TMP_Text needExp;
     public TMPro.TMP_Text score;
-    public Button ClearButton;
+
     public Button GameoverButton;
     public Button PauseButton;
 
@@ -40,8 +40,6 @@ public class IGUIManager : MonoBehaviour
 
         InGameManager.Instance.AddScore(0);
 
-        if (ClearButton != null)
-            ClearButton.onClick.AddListener(LoadManager.Instance.Change_to_MainScene);
         GameoverButton.onClick.AddListener(LoadManager.Instance.Change_to_MainScene);
         PauseButton.onClick.AddListener(LoadManager.Instance.Change_to_MainScene);
     }
@@ -100,5 +98,17 @@ public class IGUIManager : MonoBehaviour
     public void CloseHelp()
     {
         HelpUI.SetActive(false);
+    }
+
+    public void OpenLevelUp()
+    {
+        Time.timeScale = 0.0f;
+        LevelUpUI.SetActive(true);
+    }
+
+    public void CloseLevelUp()
+    {
+        LevelUpUI.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 }

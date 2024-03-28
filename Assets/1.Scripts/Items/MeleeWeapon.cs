@@ -8,7 +8,7 @@ public class MeleeWeapon : Weapon
     public LayerMask myEnemy;
     public AudioClip shootSound;
 
-    public override void Attack()
+    public override void Attack(float atkpoint)
     {
         SoundManager.Instance.PlayEfSound(attackPos.position, shootSound);
 

@@ -53,9 +53,55 @@ public class MainEquipmentContainer : MonoBehaviour
                     break;
                 }
             }
-            //제외하고 다시 돌리면 확률이 균등하게 배분되지 않을 수가 있음
-            //돌릴 때마다 확인해서 미리 제외시켜 넣을 리스트를 따로 생성
 
+            //건물을 가지고 있지 않을 때 업그레이드가 뜨는 경우
+            if (randCard.myType == cardType.BuildingUpgrade)
+            {
+                if(!InventoryManager.Instance.CheckBuildings(randCard.name))
+                {
+                    i--;
+                    continue;
+                }
+            }
+            //현재 장착중인 무기 이외의 무기업그레이드가 뜨는 경우
+            if (randCard.myType == cardType.WeaponUpgrade)
+            {
+                if (InventoryManager.Instance.myWeapon != randCard.name)
+                {
+                    i--;
+                    continue;
+                }
+            }
+            //현재 장착중인 무기가 뜨는경우
+            if (randCard.myType == cardType.Weapon)
+            {
+                if(InventoryManager.Instance.myWeapon == randCard.name)
+                {
+                    i--;
+                    continue;
+                }
+            }
+
+            bool isFirst = false;
+
+            for (int j = 0; j < cards.Count; i++)
+            {
+                if (randCard.Equals(cards[j]))
+                {
+                    isFirst = true;
+                    break;
+                }
+            }
+
+            if (isFirst)
+            {
+                i--;
+                continue;
+            }
+            else
+            {
+                cards.Add(randCard);
+            }
         }
 
         return cards;

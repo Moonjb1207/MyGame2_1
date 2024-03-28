@@ -62,6 +62,22 @@ public class LevelUpCardData : MonoBehaviour
             }
         }
     }
+    
+    public LevelUpCard GetCardStat(string ename, cardType mytype)
+    {
+        LevelUpCard myCard;
+
+        for (int i = 0; i < cardDatas.cards.Length; i++)
+        {
+            if (ename == cardDatas.cards[i].name && mytype == cardDatas.cards[i].myType)
+            {
+                myCard = cardDatas.cards[i];
+                return myCard;
+            }
+        }
+
+        return null;
+    }
 }
 
 [System.Serializable]

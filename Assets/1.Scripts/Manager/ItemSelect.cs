@@ -27,7 +27,7 @@ public class ItemSelect : MonoBehaviour
         switch (myType)
         {
             case cardType.StatUpgrade:
-
+                Player.Instance.UpgradeStat(myName, myType);
                 break;
             case cardType.Building:
                 InventoryManager.Instance.AddBuildings(myName);
@@ -37,14 +37,20 @@ public class ItemSelect : MonoBehaviour
                 InventoryManager.Instance.LevelUpBuildings(myName);
                 break;
             case cardType.Weapon:
-                LevelUpCardData.Instance.addCard(InventoryManager.Instance.myWeapon, cardType.Weapon);
                 InventoryManager.Instance.myWeapon = myName;
-                LevelUpCardData.Instance.removeCard(myName, myType);
+                InventoryManager.Instance.AddWeapons(myName);
                 break;
             case cardType.WeaponUpgrade:
                 InventoryManager.Instance.LevelUpWeapons(myName);
+                Player.Instance.curWeapon.UpgradeWeapon
+                    (LevelUpCardData.Instance.GetCardStat(myName, myType).value1, 
+                    LevelUpCardData.Instance.GetCardStat(myName, myType).value2,
+                LevelUpCardData.Instance.GetCardStat(myName, myType).value3
+                );
                 break;
         }
+
+        IGUIManager.Instance.CloseLevelUp();
     }
 
     public void setMyItem(string itemName, cardType itemType)

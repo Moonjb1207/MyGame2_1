@@ -11,18 +11,18 @@ public class RocketLauncher : Weapon
 
     private void Awake()
     {
-        CreateMissile();
+        //CreateMissile();
     }
 
-    public override void Attack()
+    public override void Attack(float atkpoint)
     {
         if (myMissile == null) return;
 
-        StartCoroutine(shootingMissile(stat.shootingCount, stat.shootingDelay));
+        StartCoroutine(shootingMissile(stat.shootingCount, stat.shootingDelay, atkpoint));
         SoundManager.Instance.PlayEfSound(shootTr.position, shootSound);
     }
 
-    IEnumerator shootingMissile(int count, float delay)
+    IEnumerator shootingMissile(int count, float delay, float atkpoint)
     {
         IsAttacking = true;
         while (count != 0)
@@ -34,15 +34,15 @@ public class RocketLauncher : Weapon
         }
         IsAttacking = false;
 
-        CreateMissile();
+        CreateMissile(atkpoint);
     }
 
-    public void CreateMissile()
+    public void CreateMissile(float atkpoint)
     {
         myMissile = MissilePool.Instance.DequeueMissile(this);
 
         myMissile.transform.position = shootTr.position;
-        myMissile.Create(transform.forward, stat.Damage, stat.LifeTime, stat.moveSpeed);
+        myMissile.Create(transform.forward, stat.Damage + atkpoint, stat.LifeTime, stat.moveSpeed);
         myMissile.gameObject.SetActive(true);
     }
 }

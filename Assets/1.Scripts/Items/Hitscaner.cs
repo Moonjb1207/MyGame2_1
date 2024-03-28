@@ -10,34 +10,34 @@ public class Hitscaner : Weapon
 
     public AudioClip shootSound;
 
-    public override void Attack()
+    public override void Attack(float atkpoint)
     {
-        StartCoroutine(shootingBullets(stat.shootingCount, stat.shootingDelay));
+        StartCoroutine(shootingBullets(stat.shootingCount, stat.shootingDelay, atkpoint));
     }
 
-    public void Shooting()
+    public void Shooting(float atkpoint)
     {
         SoundManager.Instance.PlayEfSound(shootTr.position, shootSound);
 
-        if (Physics.Raycast(shootTr.position, transform.forward, out RaycastHit hit, atkRange, layerMask))
-        {
-            hit.collider.GetComponent<IBattle>().OnDamage(stat.Damage);
-        }
+        //if (Physics.Raycast(shootTr.position, transform.forward, out RaycastHit hit, atkRange, layerMask))
+        //{
+        //    hit.collider.GetComponent<IBattle>().OnDamage(stat.Damage);
+        //}
 
         RaycastHit[] hits = Physics.RaycastAll(shootTr.position, transform.forward, atkRange, layerMask);
         for (int i = 0; i < hits.Length; i++)
         {
-            hits[i].collider.GetComponent<IBattle>().OnDamage(stat.Damage);
+            hits[i].collider.GetComponent<IBattle>().OnDamage(stat.Damage + atkpoint);
         }
     }
 
-    public IEnumerator shootingBullets(int count, float delay)
+    public IEnumerator shootingBullets(int count, float delay, float atkpoint)
     {
         IsAttacking = true;
         while (count != 0)
         {
             count--;
-            Shooting();
+            Shooting(atkpoint);
             yield return new WaitForSeconds(delay);
         }
         IsAttacking = false;
