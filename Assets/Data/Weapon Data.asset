@@ -21,7 +21,7 @@ MonoBehaviour:
     shootingCount: 0
     meleeDamage: 10
     myImg: {fileID: 21300000, guid: a8900e628b785fc46af1f73084c8860b, type: 3}
-  - weaponName: colt
+  - weaponName: Colt
     LifeTime: 1
     moveSpeed: 15
     Damage: 5
@@ -29,7 +29,7 @@ MonoBehaviour:
     shootingCount: 2
     meleeDamage: 0
     myImg: {fileID: 21300000, guid: 9bec9d3b9137f464b9ccefc4d1d7ff01, type: 3}
-  - weaponName: shotgun
+  - weaponName: Shotgun
     LifeTime: 1
     moveSpeed: 15
     Damage: 8
@@ -37,7 +37,7 @@ MonoBehaviour:
     shootingCount: 2
     meleeDamage: 0
     myImg: {fileID: 21300000, guid: 59cd3d3a19943b24a9b2da19d81aed40, type: 3}
-  - weaponName: m4a1
+  - weaponName: M4a1
     LifeTime: 1
     moveSpeed: 20
     Damage: 10
@@ -45,7 +45,7 @@ MonoBehaviour:
     shootingCount: 3
     meleeDamage: 0
     myImg: {fileID: 21300000, guid: a5c3e3ab6e9537d4eb8ad3f8f65674d7, type: 3}
-  - weaponName: ak47
+  - weaponName: Ak47
     LifeTime: 1
     moveSpeed: 15
     Damage: 15
@@ -53,7 +53,7 @@ MonoBehaviour:
     shootingCount: 3
     meleeDamage: 0
     myImg: {fileID: 21300000, guid: e1666a1c9751a614693646f9772d307a, type: 3}
-  - weaponName: aug
+  - weaponName: Aug
     LifeTime: 1
     moveSpeed: 20
     Damage: 12
@@ -61,7 +61,7 @@ MonoBehaviour:
     shootingCount: 4
     meleeDamage: 0
     myImg: {fileID: 21300000, guid: 2e4aee03255ed5441895a5efadb5f251, type: 3}
-  - weaponName: famas
+  - weaponName: Famas
     LifeTime: 1
     moveSpeed: 25
     Damage: 10
@@ -69,7 +69,7 @@ MonoBehaviour:
     shootingCount: 5
     meleeDamage: 0
     myImg: {fileID: 21300000, guid: 8a25c7b35e399a74baa53fd01e05d6dc, type: 3}
-  - weaponName: awp
+  - weaponName: Awp
     LifeTime: 2
     moveSpeed: 40
     Damage: 10
@@ -77,7 +77,7 @@ MonoBehaviour:
     shootingCount: 1
     meleeDamage: 0
     myImg: {fileID: 21300000, guid: dcf9b59bc2ceb2642b754b6b21234cf4, type: 3}
-  - weaponName: rpg
+  - weaponName: Rpg
     LifeTime: 2
     moveSpeed: 5
     Damage: 15

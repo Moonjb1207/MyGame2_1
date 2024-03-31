@@ -1,0 +1,92 @@
+{
+  "cards": [
+    {
+      "name": "Hp",
+      "weight": "3",
+      "type": "StatUpgrade",
+      "value1": "10",
+      "value2": "0",
+      "value3": "0"
+    },
+    {
+      "name": "Atk",
+      "weight": "3",
+      "type": "StatUpgrade",
+      "value1": "3",
+      "value2": "0",
+      "value3": "0"
+    },
+    {
+      "name": "Move",
+      "weight": "3",
+      "type": "StatUpgrade",
+      "value1": "0.5",
+      "value2": "0",
+      "value3": "0"
+    },
+    {
+      "name": "HalfBox",
+      "weight": "5",
+      "type": "Building",
+      "value1": "0",
+      "value2": "0",
+      "value3": "0"
+    },
+    {
+      "name": "IceBox",
+      "weight": "4",
+      "type": "Building",
+      "value1": "0",
+      "value2": "0",
+      "value3": "0"
+    },
+    {
+      "name": "FlameBox",
+      "weight": "3",
+      "type": "Building",
+      "value1": "0",
+      "value2": "0",
+      "value3": "0"
+    },
+    {
+      "name": "HalfBox",
+      "weight": "5",
+      "type": "BuildingUpgrade",
+      "value1": "10",
+      "value2": "0",
+      "value3": "0"
+    },
+    {
+      "name": "IceBox",
+      "weight": "4",
+      "type": "BuildingUpgrade",
+      "value1": "5",
+      "value2": "0.3",
+      "value3": "0"
+    },
+    {
+      "name": "FlameBox",
+      "weight": "3",
+      "type": "BuildingUpgrade",
+      "value1": "10",
+      "value2": "0.3",
+      "value3": "0"
+    },
+    {
+      "name": "Colt",
+      "weight": "3",
+      "type": "Weapon",
+      "value1": "0",
+      "value2": "0",
+      "value3": "0"
+    },
+    {
+      "name": "Colt",
+      "weight": "3",
+      "type": "WeaponUpgrade",
+      "value1": "3",
+      "value2": "0",
+      "value3": "0"
+    }
+  ]
+}

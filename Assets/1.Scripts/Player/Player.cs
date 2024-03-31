@@ -326,7 +326,6 @@ public class Player : MonoBehaviour, IBattle
                     {
                         curWeapon = weapons[i];
                         curWeapon.gameObject.SetActive(true);
-                        InventoryManager.Instance.myWeapon = equipName;
                         break;
                     }
                 }

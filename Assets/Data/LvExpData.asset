@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: LvExpData
   m_EditorClassIdentifier: 
   lvexpData:
-  - needExp: 0
-  - needExp: 10
-  - needExp: 40
-  - needExp: 100
-  - needExp: 200
-  - needExp: 350
-  - needExp: 550
-  - needExp: 800
-  - needExp: 1000
+  - myName: Hp
+    myImg: {fileID: 0}
+  - myName: Atk
+    myImg: {fileID: 0}
+  - myName: Move
+    myImg: {fileID: 0}

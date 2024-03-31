@@ -86,6 +86,7 @@ public class LevelUpCards
     public LevelUpCard[] cards;
 }
 
+[System.Serializable]
 public class LevelUpCard
 {
     public string name;

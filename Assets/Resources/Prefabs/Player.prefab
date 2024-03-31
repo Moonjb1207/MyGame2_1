@@ -4118,7 +4118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 0
   stat:
-    weaponName: rpg
+    weaponName: Rpg
     LifeTime: 0
     moveSpeed: 0
     Damage: 0
@@ -22606,6 +22606,9 @@ MonoBehaviour:
   rg: {fileID: 0}
   curHP: 0
   maxHP: 0
+  PlayerAttackPoint: 0
+  maxMoveSpeed: 0
+  maxAtkPoint: 0
   bodyTr: {fileID: 0}
   myEnemy:
     serializedVersion: 2
@@ -22621,10 +22624,9 @@ MonoBehaviour:
   - {fileID: 6386375488269050424}
   - {fileID: 5418561052487049100}
   curWeapon: {fileID: 0}
-  meleeDamage: 0
   myLevel: 0
   myExp: 0
-  lvexpData: {fileID: 11400000, guid: 27c67f7edcce7a24dbb953afb9144820, type: 2}
+  myExpNeed: 0
   moveJoystick: {fileID: 0}
   rotJoystick: {fileID: 0}
   myGold: 0
@@ -35098,7 +35100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 0
   stat:
-    weaponName: famas
+    weaponName: Famas
     LifeTime: 0
     moveSpeed: 0
     Damage: 0
@@ -35209,7 +35211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 0
   stat:
-    weaponName: awp
+    weaponName: Awp
     LifeTime: 0
     moveSpeed: 0
     Damage: 0
@@ -35323,7 +35325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 0
   stat:
-    weaponName: ak47
+    weaponName: Ak47
     LifeTime: 0
     moveSpeed: 0
     Damage: 0
@@ -35434,7 +35436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 0
   stat:
-    weaponName: aug
+    weaponName: Aug
     LifeTime: 0
     moveSpeed: 0
     Damage: 0
@@ -35545,7 +35547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 0
   stat:
-    weaponName: colt
+    weaponName: Colt
     LifeTime: 0
     moveSpeed: 0
     Damage: 0
@@ -36564,7 +36566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 0
   stat:
-    weaponName: m4a1
+    weaponName: M4a1
     LifeTime: 0
     moveSpeed: 0
     Damage: 0
@@ -36789,7 +36791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myType: 0
   stat:
-    weaponName: shotgun
+    weaponName: Shotgun
     LifeTime: 0
     moveSpeed: 0
     Damage: 0

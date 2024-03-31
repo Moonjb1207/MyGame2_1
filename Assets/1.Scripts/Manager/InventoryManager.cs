@@ -112,7 +112,7 @@ public class InventoryManager : MonoBehaviour
 
         for (int i = 0; i < EquipmentManager.Instance.buildingData.buildingStats.Length; i++)
         {
-            if (mybuildingDic[(EquipmentManager.Instance.buildingData.buildingStats[i].buildingName)] > 0)
+            if (mybuildingDic.ContainsKey((EquipmentManager.Instance.buildingData.buildingStats[i].buildingName)))
             {
                 buildings.Add(EquipmentManager.Instance.buildingData.buildingStats[i].buildingName);
             }
