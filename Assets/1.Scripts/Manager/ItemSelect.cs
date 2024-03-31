@@ -7,7 +7,7 @@ public class ItemSelect : MonoBehaviour
 {
     public Image Img;
     public string myName;
-    public cardType myType;
+    public string myType;
     public TMPro.TMP_Text Info;
 
     public Button selectButton;
@@ -19,28 +19,29 @@ public class ItemSelect : MonoBehaviour
 
     private void OnEnable()
     {
-        
+
     }
 
     public void SelectItem()
     {
         switch (myType)
         {
-            case cardType.StatUpgrade:
+            case "StatUpgrade":
                 Player.Instance.UpgradeStat(myName, myType);
                 break;
-            case cardType.Building:
+            case "Building":
                 InventoryManager.Instance.AddBuildings(myName);
                 LevelUpCardData.Instance.removeCard(myName, myType);
                 break;
-            case cardType.BuildingUpgrade:
+            case "BuildingUpgrade":
                 InventoryManager.Instance.LevelUpBuildings(myName);
                 break;
-            case cardType.Weapon:
+            case "Weapon":
                 InventoryManager.Instance.myWeapon = myName;
                 InventoryManager.Instance.AddWeapons(myName);
+                Player.Instance.EquipItem(ItemType.weapon, myName);
                 break;
-            case cardType.WeaponUpgrade:
+            case "WeaponUpgrade":
                 InventoryManager.Instance.LevelUpWeapons(myName);
                 Player.Instance.curWeapon.UpgradeWeapon
                     (LevelUpCardData.Instance.GetCardStat(myName, myType).value1, 
@@ -53,7 +54,7 @@ public class ItemSelect : MonoBehaviour
         IGUIManager.Instance.CloseLevelUp();
     }
 
-    public void setMyItem(string itemName, cardType itemType)
+    public void setMyItem(string itemName, string itemType)
     {
         myType = itemType;
         myName = itemName;
@@ -63,19 +64,19 @@ public class ItemSelect : MonoBehaviour
     {
         switch (myType)
         {
-            case cardType.StatUpgrade:
+            case "StatUpgrade":
                 Img.sprite = EquipmentManager.Instance.GetStatUpStat(myName).myImg;
                 break;
-            case cardType.Building:
+            case "Building":
                 Img.sprite = EquipmentManager.Instance.GetBuildingStat(myName).myImg;
                 break;
-            case cardType.BuildingUpgrade:
+            case "BuildingUpgrade":
                 Img.sprite = EquipmentManager.Instance.GetBuildingStat(myName).myImg;
                 break;
-            case cardType.Weapon:
+            case "Weapon":
                 Img.sprite = EquipmentManager.Instance.GetWeaponStat(myName).myImg;
                 break;
-            case cardType.WeaponUpgrade:
+            case "WeaponUpgrade":
                 Img.sprite = EquipmentManager.Instance.GetWeaponStat(myName).myImg;
                 break;
         }
@@ -85,15 +86,15 @@ public class ItemSelect : MonoBehaviour
     {
         switch(myType)
         {
-            case cardType.StatUpgrade:
+            case "StatUpgrade":
                 break;
-            case cardType.Building:
+            case "Building":
                 break;
-            case cardType.BuildingUpgrade:
+            case "BuildingUpgrade":
                 break;
-            case cardType.Weapon:
+            case "Weapon":
                 break;
-            case cardType.WeaponUpgrade:
+            case "WeaponUpgrade":
                 break;
         }
     }

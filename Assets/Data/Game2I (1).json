@@ -1,0 +1,169 @@
+{
+  "cards": [
+    {
+      "name": "Hp",
+      "weight": "3",
+      "myType": "StatUpgrade",
+      "value1": "10",
+      "value2": "0",
+      "value3": "0",
+      "s_value1": null,
+      "s_value2": null,
+      "s_value3": null
+    },
+    {
+      "name": "Atk",
+      "weight": "3",
+      "myType": "StatUpgrade",
+      "value1": "3",
+      "value2": "0",
+      "value3": "0",
+      "s_value1": null,
+      "s_value2": null,
+      "s_value3": null
+    },
+    {
+      "name": "Move",
+      "weight": "3",
+      "myType": "StatUpgrade",
+      "value1": "0.5",
+      "value2": "0",
+      "value3": "0",
+      "s_value1": null,
+      "s_value2": null,
+      "s_value3": null
+    },
+    {
+      "name": "HalfBox",
+      "weight": "5",
+      "myType": "Building",
+      "value1": "0",
+      "value2": "0",
+      "value3": "0",
+      "s_value1": null,
+      "s_value2": null,
+      "s_value3": null
+    },
+    {
+      "name": "IceBox",
+      "weight": "4",
+      "myType": "Building",
+      "value1": "0",
+      "value2": "0",
+      "value3": "0",
+      "s_value1": null,
+      "s_value2": null,
+      "s_value3": null
+    },
+    {
+      "name": "FlameBox",
+      "weight": "3",
+      "myType": "Building",
+      "value1": "0",
+      "value2": "0",
+      "value3": "0",
+      "s_value1": null,
+      "s_value2": null,
+      "s_value3": null
+    },
+    {
+      "name": "HalfBox",
+      "weight": "5",
+      "myType": "BuildingUpgrade",
+      "value1": "10",
+      "value2": "0",
+      "value3": "0",
+      "s_value1": null,
+      "s_value2": null,
+      "s_value3": null
+    },
+    {
+      "name": "IceBox",
+      "weight": "4",
+      "myType": "BuildingUpgrade",
+      "value1": "5",
+      "value2": "0.3",
+      "value3": "0",
+      "s_value1": null,
+      "s_value2": null,
+      "s_value3": null
+    },
+    {
+      "name": "FlameBox",
+      "weight": "3",
+      "myType": "BuildingUpgrade",
+      "value1": "10",
+      "value2": "0.3",
+      "value3": "0",
+      "s_value1": null,
+      "s_value2": null,
+      "s_value3": null
+    },
+    {
+      "name": "Colt",
+      "weight": "3",
+      "myType": "Weapon",
+      "value1": "0",
+      "value2": "0",
+      "value3": "0",
+      "s_value1": null,
+      "s_value2": null,
+      "s_value3": null
+    },
+    {
+      "name": "Colt",
+      "weight": "3",
+      "myType": "WeaponUpgrade",
+      "value1": "3",
+      "value2": "0",
+      "value3": "0",
+      "s_value1": null,
+      "s_value2": null,
+      "s_value3": null
+    },
+    {
+      "name": "Shotgun",
+      "weight": "3",
+      "myType": "Weapon",
+      "value1": "0",
+      "value2": "0",
+      "value3": "0",
+      "s_value1": null,
+      "s_value2": null,
+      "s_value3": null
+    },
+    {
+      "name": "Shotgun",
+      "weight": "3",
+      "myType": "WeaponUpgrade",
+      "value1": "3",
+      "value2": "0",
+      "value3": "0",
+      "s_value1": null,
+      "s_value2": null,
+      "s_value3": null
+    },
+    {
+      "name": "Famas",
+      "weight": "3",
+      "myType": "Weapon",
+      "value1": "0",
+      "value2": "0",
+      "value3": "0",
+      "s_value1": null,
+      "s_value2": null,
+      "s_value3": null
+    },
+    {
+      "name": "Famas",
+      "weight": "3",
+      "myType": "WeaponUpgrade",
+      "value1": "3",
+      "value2": "0",
+      "value3": "0",
+      "s_value1": null,
+      "s_value2": null,
+      "s_value3": null
+    }
+  ]
+}

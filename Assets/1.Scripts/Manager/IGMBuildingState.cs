@@ -14,7 +14,7 @@ public class IGMBuildingState : IGMState
         manager.buildButton.interactable = true;
         //building start
 
-        Player.Instance.AddGold(100);
+        //Player.Instance.AddGold(100);
     }
 
     public override void UpdateState()

@@ -6,7 +6,6 @@ public class MainEquipmentContainer : MonoBehaviour
 {
     public List<ItemSelect> items = new List<ItemSelect>();
     public ItemSelect selectItem;
-    public ItemType itemType;
 
     int totalWeight;
 
@@ -55,7 +54,7 @@ public class MainEquipmentContainer : MonoBehaviour
             }
 
             //건물을 가지고 있지 않을 때 업그레이드가 뜨는 경우
-            if (randCard.myType == cardType.BuildingUpgrade)
+            if (randCard.myType == "BuildingUpgrade")
             {
                 if(!InventoryManager.Instance.CheckBuildings(randCard.name))
                 {
@@ -64,7 +63,7 @@ public class MainEquipmentContainer : MonoBehaviour
                 }
             }
             //현재 장착중인 무기 이외의 무기업그레이드가 뜨는 경우
-            if (randCard.myType == cardType.WeaponUpgrade)
+            if (randCard.myType == "WeaponUpgrade")
             {
                 if (InventoryManager.Instance.myWeapon != randCard.name)
                 {
@@ -73,7 +72,7 @@ public class MainEquipmentContainer : MonoBehaviour
                 }
             }
             //현재 장착중인 무기가 뜨는경우
-            if (randCard.myType == cardType.Weapon)
+            if (randCard.myType == "Weapon")
             {
                 if(InventoryManager.Instance.myWeapon == randCard.name)
                 {
@@ -84,7 +83,7 @@ public class MainEquipmentContainer : MonoBehaviour
 
             bool isFirst = false;
 
-            for (int j = 0; j < cards.Count; i++)
+            for (int j = 0; j < cards.Count; j++)
             {
                 if (randCard.Equals(cards[j]))
                 {

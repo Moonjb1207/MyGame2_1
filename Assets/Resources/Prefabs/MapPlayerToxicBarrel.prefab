@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4624175068232225325}
   - component: {fileID: 4445456471788275297}
-  m_Layer: 14
+  m_Layer: 12
   m_Name: MapPlayerToxicBarrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 4648120989322523043}
   - component: {fileID: 4672267031142559029}
   - component: {fileID: 4672267031142559030}
-  m_Layer: 14
+  m_Layer: 12
   m_Name: Toxic_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 7885519720683631088}
   - component: {fileID: 816994955609470630}
   - component: {fileID: 8855301156925310753}
-  m_Layer: 14
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

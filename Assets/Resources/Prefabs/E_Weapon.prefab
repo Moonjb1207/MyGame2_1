@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myEnemy:
     serializedVersion: 2
-    m_Bits: 6656
+    m_Bits: 19968
   LifeTime: 0
   moveSpeed: 0
   Damage: 0

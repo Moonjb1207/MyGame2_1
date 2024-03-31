@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 255744359571926967}
   - component: {fileID: 4866518851265769306}
-  m_Layer: 14
+  m_Layer: 12
   m_Name: MapPlayerFlameBarrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 2425206744748036523}
   - component: {fileID: 9052691732438763770}
   - component: {fileID: 4354020525104452470}
-  m_Layer: 14
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 5386595591359984573}
   - component: {fileID: 5396251728342764961}
   - component: {fileID: 5396251728342764963}
-  m_Layer: 14
+  m_Layer: 12
   m_Name: Flamable_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

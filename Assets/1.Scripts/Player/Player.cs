@@ -368,7 +368,6 @@ public class Player : MonoBehaviour, IBattle
             LevelUp();
 
             myExp += remain;
-            myExpNeed = myExpNeed + myExpNeed * myLevel;
         }
 
         IGUIManager.Instance.myExp.text = myExp.ToString();
@@ -410,7 +409,7 @@ public class Player : MonoBehaviour, IBattle
         IGUIManager.Instance.OpenLevelUp();
     }
 
-    public void UpgradeStat(string stat, cardType mytype)
+    public void UpgradeStat(string stat, string mytype)
     {
         LevelUpCard cardStat = LevelUpCardData.Instance.GetCardStat(stat, mytype);
 

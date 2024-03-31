@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4055170354452319819}
   - component: {fileID: 4574179395068208971}
   - component: {fileID: 3703201642110241652}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2240881192534159605}
   - component: {fileID: 8465936755724388498}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: MapPlayerIceBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 7233300462945673909}
   - component: {fileID: 269504905755009064}
   - component: {fileID: 5475014124722230339}
-  m_Layer: 12
+  m_Layer: 10
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}

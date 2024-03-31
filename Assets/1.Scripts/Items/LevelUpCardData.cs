@@ -37,7 +37,7 @@ public class LevelUpCardData : MonoBehaviour
         
     }
 
-    public void removeCard(string ename, cardType mytype)
+    public void removeCard(string ename, string mytype)
     {
         for (int i = 0; i < CardDatas.Count; i++)
         {
@@ -49,7 +49,7 @@ public class LevelUpCardData : MonoBehaviour
         }
     }
 
-    public void addCard(string ename, cardType mytype)
+    public void addCard(string ename, string mytype)
     {
         for (int i = 0; i < cardDatas.cards.Length; i++)
         {
@@ -63,7 +63,7 @@ public class LevelUpCardData : MonoBehaviour
         }
     }
     
-    public LevelUpCard GetCardStat(string ename, cardType mytype)
+    public LevelUpCard GetCardStat(string ename, string mytype)
     {
         LevelUpCard myCard;
 
@@ -91,21 +91,12 @@ public class LevelUpCard
 {
     public string name;
     public int weight;
-    public cardType myType;
+    public string myType;
     public float value1;
     public float value2;
     public float value3;
     public string s_value1;
     public string s_value2;
     public string s_value3;
-}
-
-public enum cardType
-{ 
-    Weapon,
-    WeaponUpgrade,
-    Building,
-    BuildingUpgrade,
-    StatUpgrade,
 }
 

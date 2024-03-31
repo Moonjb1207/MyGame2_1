@@ -50,10 +50,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myEnemy:
     serializedVersion: 2
-    m_Bits: 16640
+    m_Bits: 4352
   myBlock:
     serializedVersion: 2
-    m_Bits: 22784
+    m_Bits: 7936
   LifeTime: 0
   moveSpeed: 0
   Damage: 0

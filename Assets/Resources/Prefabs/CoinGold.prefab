@@ -112,6 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myPlayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 16384
   rotate: 0
   rotationSpeed: 0
