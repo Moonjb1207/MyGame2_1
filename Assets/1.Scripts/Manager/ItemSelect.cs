@@ -84,17 +84,36 @@ public class ItemSelect : MonoBehaviour
 
     public void setInfo()
     {
-        switch(myType)
+        LevelUpCard myCard = LevelUpCardData.Instance.GetCardStat(myName, myType);
+
+        if (myCard == null)
+            return;
+
+        switch (myType)
         {
             case "StatUpgrade":
+                Info.text = "½ºÅÈ °­È­\n" +
+                    myCard.infoName + " + " + myCard.value1;
                 break;
             case "Building":
+                Info.text = "±¸Á¶¹° È¹µæ\n" +
+                    myCard.infoName + "\n" +
+                    myCard.s_value1 + EquipmentManager.Instance.GetBuildingStat(myName).buildingHP;
                 break;
             case "BuildingUpgrade":
+                Info.text = "±¸Á¶¹° °­È­\n" +
+                    myCard.infoName + "\n" +
+                    myCard.s_value1 + myCard.value1;
                 break;
             case "Weapon":
+                Info.text = "¹«±â È¹µæ\n" +
+                    myCard.infoName + "\n" +
+                    myCard.s_value1 + EquipmentManager.Instance.GetWeaponStat(myName).Damage;
                 break;
             case "WeaponUpgrade":
+                Info.text = "¹«±â °­È­\n" +
+                    myCard.infoName + "\n" +
+                    myCard.s_value1 + myCard.value1;
                 break;
         }
     }

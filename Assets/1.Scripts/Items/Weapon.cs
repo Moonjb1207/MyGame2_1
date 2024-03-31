@@ -19,6 +19,8 @@ public abstract class Weapon : Items
     public virtual void UpgradeWeapon(float val1, float val2 = 0, float val3 = 0)
     {
         stat.Damage += val1;
+        //stat.shootingDelay = stat.shootingDelay * val2;
+        //stat.shootingCount = InventoryManager.Instance.myWeaponDic[stat.weaponName] / 10;
     }
 
     public abstract void Attack(float atkpoint);

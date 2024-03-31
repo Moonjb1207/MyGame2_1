@@ -36803,8 +36803,8 @@ MonoBehaviour:
   shootTr: {fileID: 4009369392531077252}
   bulletPrefab: {fileID: -8776923074991913517, guid: 84f31ff2376e75744a5beaf9bcc0ee55, type: 3}
   shootSound: {fileID: 8300000, guid: d1b35ac821812c840ac66b91c3ed9f35, type: 3}
-  angle: 20
-  dirCount: 5
+  angle: 40
+  dirCount: 3
 --- !u!1 &6402521776176719782
 GameObject:
   m_ObjectHideFlags: 0

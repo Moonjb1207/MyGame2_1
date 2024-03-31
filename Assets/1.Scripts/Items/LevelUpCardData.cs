@@ -95,6 +95,7 @@ public class LevelUpCard
     public float value1;
     public float value2;
     public float value3;
+    public string infoName;
     public string s_value1;
     public string s_value2;
     public string s_value3;

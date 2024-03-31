@@ -26,7 +26,7 @@ public class MainEquipmentContainer : MonoBehaviour
 
     private void Start()
     {
-        LoadEquipment();
+
     }
 
     public List<LevelUpCard> RandomCardPick()
@@ -108,6 +108,8 @@ public class MainEquipmentContainer : MonoBehaviour
 
     public void calTotalWeight()
     {
+        totalWeight = 0;
+
         for (int i = 0; i < LevelUpCardData.Instance.CardDatas.Count; i++)
         {
             totalWeight += LevelUpCardData.Instance.CardDatas[i].weight;
