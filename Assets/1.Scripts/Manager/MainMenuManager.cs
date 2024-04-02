@@ -31,11 +31,11 @@ public class MainMenuManager : MonoBehaviour
 
     public void OpenHelpMenu()
     {
-
+        HelpMenu.SetActive(true);
     }
 
     public void CloseHelpMenu()
     {
-
+        HelpMenu.SetActive(false);
     }
 }
