@@ -31,6 +31,6 @@ public abstract class Weapon : Items
         //stat.shootingDelay = stat.shootingDelay * val2;
         //stat.shootingCount = InventoryManager.Instance.myWeaponDic[stat.weaponName] / 10;
     }
-
+    
     public abstract void Attack(float atkpoint);
 }
